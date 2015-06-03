@@ -3,7 +3,7 @@
 define('CON_ADMIN_HOST','localhost');
 define("CON_ADMIN_USER","root");
 define("CON_ADMIN_PASS","");
-define("CON_ADMIN_BASE","admingl");
+define("CON_ADMIN_BASE","mapaComercio");
 
 //Constantes de banco
 define("DB_ADMIN",CON_ADMIN_BASE.".");
