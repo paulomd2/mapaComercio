@@ -34,21 +34,25 @@ if (array_search('agenda', $diretorio) == true) {
 
 <aside class="barra-lateral" id="barra-lateral">
     <ul>
-        <li><a href="../noticias" <?php
-            if (array_search('noticias', $diretorio) == true) {
-                echo 'class="ativo"';
-            }
-            ?>><i class="icon icon-newspaper"></i> Notícias</a></li>
-        <li><a href="../releases/" <?php
-            if (array_search('releases', $diretorio) == true) {
-                echo 'class="ativo"';
-            }
-            ?>><i class="icon icon-newspaper"></i> Região</a></li>
-        <li><a href="../destaques" <?php
-            if (array_search('destaques', $diretorio) == true) {
-                echo 'class="ativo"';
-            }
-            ?>><i class="icon icon-tv"></i> Agenda</a></li>
-
+        <li>
+            <a href="../usuarios" <?php echo (array_search('usuarios', $diretorio) == true) ? 'class="ativo"' : ''; ?>>
+                <i class="icon icon-newspaper"></i> Usuários
+            </a>
+        </li>
+        <li>
+            <a href="../noticias" <?php echo (array_search('noticias', $diretorio) == true) ? 'class="ativo"' : ''; ?>>
+                <i class="icon icon-newspaper"></i> Notícias
+            </a>
+        </li>
+        <li>
+            <a href="../regiao/" <?php echo (array_search('regiao', $diretorio) == true) ? 'class="ativo"' : ''; ?>>
+                <i class="icon icon-newspaper"></i> Região
+            </a>
+        </li>
+        <li>
+            <a href="../agenda" <?php echo (array_search('agenda', $diretorio) == true) ? 'class="ativo"' : ''; ?>>
+                <i class="icon icon-tv"></i> Agenda
+            </a>
+        </li>
     </ul>
 </aside>
