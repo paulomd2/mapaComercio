@@ -5,82 +5,109 @@ class Noticia {
     private $idNoticia;
     private $titulo;
     private $subtitulo;
-    private $fonte;
     private $texto;
     private $dataPublicacao;
     private $dataCadastro;
-    private $mercado;
     private $status;
-
+    private $foto;
+    private $idRegiao;
+    private $caderno;
+    private $tipoNoticia;
+    private $creditoFoto;
+    
     public function getIdNoticia() {
         return $this->idNoticia;
     }
     public function setIdNoticia($idNoticia) {
-        $this->idNoticia = seg($idNoticia);
+        $this->idNoticia = $idNoticia;
     }
-    
 
+    
     public function getTitulo() {
         return $this->titulo;
     }
     public function setTitulo($titulo) {
-        $this->titulo = seg($titulo);
+        $this->titulo = $titulo;
     }
     
 
-    public function getSubTitulo() {
+    public function getSubtitulo() {
         return $this->subtitulo;
     }
-    public function setSubTitulo($subtitulo) {
-        $this->subtitulo = seg($subtitulo);
+    public function setSubtitulo($subtitulo) {
+        $this->subtitulo = $subtitulo;
     }
-
     
-    public function getFonte() {
-        return $this->fonte;
-    }
-    public function setFonte($fonte) {
-        $this->fonte = seg($fonte);
-    }
 
-    
-    function getTexto() {
+    public function getTexto() {
         return $this->texto;
     }
-    function setTexto($texto) {
-        $this->texto = seg($texto);
+    public function setTexto($texto) {
+        $this->texto = $texto;
     }
-
     
-    function getDataPublicacao() {
+
+    public function getDataPublicacao() {
         return $this->dataPublicacao;
     }
-    function setDataPublicacao($dataPublicacao) {
-        $this->dataPublicacao = seg($dataPublicacao);
+    public function setDataPublicacao($dataPublicacao) {
+        $this->dataPublicacao = $dataPublicacao;
     }
-
     
-    function getDataCadastro() {
+
+    public function getDataCadastro() {
         return $this->dataCadastro;
     }
-    function setDataCadastro($dataCadastro) {
-        $this->dataCadastro = seg($dataCadastro);
+    public function setDataCadastro($dataCadastro) {
+        $this->dataCadastro = $dataCadastro;
     }
+    
 
-    
-    function getMercado() {
-        return $this->mercado;
-    }
-    function setMercado($mercado) {
-        $this->mercado = seg($mercado);
-    }
-    
-    
-    function getStatus() {
+    public function getStatus() {
         return $this->status;
     }
-    function setStatus($status) {
-        $this->status = seg($status);
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+    
+
+    public function getFoto() {
+        return $this->foto;
+    }
+    public function setFoto($foto) {
+        $this->foto = $foto;
+    }
+    
+
+    public function getIdRegiao() {
+        return $this->idRegiao;
+    }
+    public function setIdRegiao($idRegiao) {
+        $this->idRegiao = $idRegiao;
+    }
+    
+
+    public function getCaderno() {
+        return $this->caderno;
+    }
+    public function setCaderno($caderno) {
+        $this->caderno = $caderno;
+    }
+    
+
+    public function getTipoNoticia() {
+        return $this->tipoNoticia;
+    }
+    public function setTipoNoticia($tipoNoticia) {
+        $this->tipoNoticia = $tipoNoticia;
+    }
+    
+
+    public function getCreditoFoto() {
+        return $this->creditoFoto;
+    }
+    public function setCreditoFoto($creditoFoto) {
+        $this->creditoFoto = $creditoFoto;
     }
 }
 

@@ -9,7 +9,7 @@ setcookie("ck_authorized", "true", 0, "/");
         <?php include_once '../include/head.php'; ?>
         <!--<script type="text/javascript" src="../js/jquery-2.1.3.js"></script>-->
         <script type="text/javascript" src="../js/jquery.maskedinput.js"></script>
-        <script type="text/javascript" src="js/noticias.js"></script>
+        <script type="text/javascript" src="../js/noticias.js"></script>
         <script src="../plugin/ckeditor/ckeditor.js"></script>
     </head>
     <body>

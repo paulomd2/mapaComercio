@@ -8,7 +8,7 @@ setcookie("ck_authorized", "true", 0, "/");
         <meta charset="UTF-8">
         <title>Painel | Fagga</title>
         <?php include_once '../include/head.php'; ?>
-        <script type="text/javascript" src="js/noticias.js"></script>
+        <script type="text/javascript" src="../js/noticias.js"></script>
         <script src="../plugin/ckeditor/ckeditor.js"></script>
         <script src="../plugin/ckfinder/ckfinder.js"></script>
     </head>

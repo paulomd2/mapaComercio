@@ -1,6 +1,8 @@
 <?php
+require_once '../model/banco.php';
+require_once '../model/regiaoDao.php';
+
 if (isset($_GET['id'])) {
-    require_once '../model/banco.php';
     require_once '../model/noticiasDao.php';
 
     $idNoticia = $_GET['id'];
@@ -8,8 +10,6 @@ if (isset($_GET['id'])) {
     $objNoticia->setIdNoticia($idNoticia);
 
     $noticia = $objNoticiaDao->verNoticia1($objNoticia);
-}else{
-    $noticica = '';
 }
 ?>
 <form name="cadNoticia">
@@ -18,14 +18,14 @@ if (isset($_GET['id'])) {
         <tr>
             <td>Título:</td>
             <td>
-                <input type="text" name="titulo" id="titulo" <?php echo ($noticia != '') ? "value='".$noticia['titulo']."'" : ''; ?>  /><br />
+                <input type="text" name="titulo" id="titulo" <?php echo (isset($noticia)) ? "value='" . $noticia['titulo'] . "'" : ''; ?>  /><br />
                 <span id="spanTitulo" class="erro"></span>
             </td>
         </tr>
         <tr>
             <td>Subtítulo:</td>
             <td>
-                <input type="text" name="subTitulo" id="subTitulo" value="<?php echo $noticia['subtitulo'] ?>" /><br />
+                <input type="text" name="subTitulo" id="subTitulo" <?php echo (isset($noticia)) ? "value='" . $noticia['subtitulo'] . "'" : ''; ?> /><br />
                 <span id="spanSub" class="erro"></span>
             </td>
         </tr>
@@ -57,10 +57,18 @@ if (isset($_GET['id'])) {
             <td>região:</td>
             <td>
                 <select id="regiao" name="regiao">
-                    <option value="regiao1">Região 1</option>
-                    <option value="regiao2">Região 2</option>
-                    <option value="regiao3">Região 3</option>
-                    <option value="regiao4">Região 4</option>
+                    <?php
+                    $regioes = $objRegiaoDao->listaRegiao();
+
+                    foreach ($regioes as $regiao) {
+                        $selected = '';
+                        if (isset($noticia) && $noticia['idRegiao'] == $regiao['idRegiao']) {
+                            $selected = 'seleceted';
+                        }
+                        
+                        echo '<option value="'.$regiao["idRegiao"].'">'.$regiao["nome"].'</option>';
+                    }
+                    ?>
                 </select>
                 <span id="spanSub" class="erro"></span>
             </td>
@@ -68,7 +76,7 @@ if (isset($_GET['id'])) {
         <tr>
             <td>Texto:</td>
             <td>
-                <textarea type="text" name="texto" id="texto" cols="40" rows="8"></textarea><br />
+                <textarea type="text" name="texto" id="texto" cols="40" rows="8"><?php echo (isset($noticia)) ? $noticia['texto'] : ''; ?></textarea><br />
                 <span id="spanFonte" class="erro"></span>
             </td>
         </tr>
@@ -78,12 +86,12 @@ if (isset($_GET['id'])) {
         </tr>
         <tr>
             <td>Crédito da Foto:</td>
-            <td><input type="text" id="credito" name="credito" /></td>
+            <td><input type="text" id="credito" name="credito" <?php echo (isset($noticia)) ? "value='" . $noticia['credito'] . "'" : ''; ?> /></td>
         </tr>
         <tr>
             <td>Data de Publicação:</td>
             <td>
-                <input type="date" name="publicacao" id="publicacao" /><br />
+                <input type="date" name="publicacao" id="publicacao" <?php echo (isset($noticia)) ? "value='" . $noticia['dataPublicacao'] . "'" : ''; ?> /><br />
                 <span id="spanPublicacao" class="erro"></span>
             </td>
         </tr>
@@ -91,9 +99,8 @@ if (isset($_GET['id'])) {
             <td>Status:</td>
             <td>
                 <select id="status" name="status">
-                    <option value="">Selecione um status</option>
-                    <option value="1" selected="">Habilitado</option>
-                    <option value="2">Desabilitado</option>
+                    <option value="1" <?php echo (isset($noticia) && $noticia['status'] == 1) ? "selected" : ''; ?>>Habilitado</option>
+                    <option value="2" <?php echo (isset($noticia) && $noticia['status'] == 2) ? "selected" : ''; ?>>Desabilitado</option>
                 </select>
                 <span id="spanStatus" class="erro"></span>
             </td>

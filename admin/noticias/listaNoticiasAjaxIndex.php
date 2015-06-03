@@ -1,6 +1,6 @@
 <?php
 require_once '../model/banco.php';
-require_once 'model/dao.php';
+require_once '../model/noticiasDao.php';
 
 $noticias = $objNoticiaDao->verNoticias(5);
 for ($i = 0; $i < count($noticias); $i++) {

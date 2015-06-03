@@ -8,13 +8,16 @@ class NoticiasDAO extends Banco {
         $conexao = $this->abreConexao();
 
         $sql = "INSERT INTO " . TBL_NOTICIA . " SET
+               idRegiao = '" . $objNoticia->getTexto() . "',
                titulo = '" . $objNoticia->getTitulo() . "',
                subtitulo = '" . $objNoticia->getSubTitulo() . "',
-               fonte = '" . $objNoticia->getFonte() . "',
-               dataPublicacao = '" . $objNoticia->getDataPublicacao() . "',
                texto = '" . $objNoticia->getTexto() . "',
+               foto = '" . $objNoticia->getTexto() . "',
+               creditoFoto = '" . $objNoticia->getTexto() . "',
+               tipoNoticia = '" . $objNoticia->getTexto() . "',
+               caderno = '" . $objNoticia->getTexto() . "',
+               dataPublicacao = '" . $objNoticia->getDataPublicacao() . "',
                dataCadastro = '" . $objNoticia->getDataCadastro() . "',
-               mercado = " . $objNoticia->getMercado() . ",
                status = " . $objNoticia->getStatus() . "
                ";
 
@@ -27,12 +30,16 @@ class NoticiasDAO extends Banco {
         $conexao = $this->abreConexao();
 
         $sql = "UPDATE " . TBL_NOTICIA . " SET
+               idRegiao = '" . $objNoticia->getTexto() . "',
                titulo = '" . $objNoticia->getTitulo() . "',
                subtitulo = '" . $objNoticia->getSubTitulo() . "',
-               fonte = '" . $objNoticia->getFonte() . "',
-               dataPublicacao = '" . $objNoticia->getDataPublicacao() . "',
                texto = '" . $objNoticia->getTexto() . "',
-               mercado = " . $objNoticia->getMercado() . ",
+               foto = '" . $objNoticia->getTexto() . "',
+               creditoFoto = '" . $objNoticia->getTexto() . "',
+               tipoNoticia = '" . $objNoticia->getTexto() . "',
+               caderno = '" . $objNoticia->getTexto() . "',
+               dataPublicacao = '" . $objNoticia->getDataPublicacao() . "',
+               dataCadastro = '" . $objNoticia->getDataCadastro() . "',
                status = " . $objNoticia->getStatus() . "
                    WHERE idNoticia = " . $objNoticia->getIdNoticia() . "
                ";
@@ -57,10 +64,10 @@ class NoticiasDAO extends Banco {
     public function verNoticias($count) {
         $conexao = $this->abreConexao();
 
-        $sql = "SELECT *, DATE_FORMAT(dataPublicacao, '%d/%m/%Y') as dataPublicacao2
+        $sql = "SELECT *
                 FROM " . TBL_NOTICIA . "
                     WHERE status != 0
-                        ORDER BY dataPublicacao DESC
+                        ORDER BY dataExibicao DESC
                         LIMIT " . $count . "
                 ";
 
