@@ -1,0 +1,602 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
+@import url(demo-files/demo.css);
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+html, body{
+    height: 100%;
+}
+body{
+    background: #f1f2f2;
+}
+/*
+html {table
+overflow-y: hidden;
+}#scrollbar-track {
+width: 15px;
+position: fixed;
+right: 0px;
+height: 100%;
+background: transparent;
+}
+
+#scrollbar {
+width: 6px;
+position: fixed;
+right: 0px;
+background: #666;
+
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}*/
+/**/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.cb{
+    clear: both;
+}
+aside.barra-lateral{
+    width:208px;
+    /*padding: 20px;*/
+    height: 700px;
+    min-height: 100%;
+    background: #67686b;
+    min-height: -webkit-calc(100% - 81px);
+    min-height: -moz-calc(100% - 81px);
+    min-height: calc(100% - 81px);
+    overflow: auto;
+    float: left;
+    position: fixed;
+    top: 80px;
+}
+.barra-lateral ul{
+    list-style: none;
+}
+.barra-lateral ul li.hasub{
+    background: url(../imagens/setbottom-menu.png) no-repeat top 20px right 10px;
+}
+.barra-lateral ul li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /*background: url(../imagens/setbottom-menu.png) no-repeat center right 10px;*/
+}
+.barra-lateral ul li a:hover, .ativo{
+    background: #888 !important;
+}
+.barra-lateral li ul{
+    display: none;
+}
+.barra-lateral li ul:target{
+    display: block;
+}
+.barra-lateral li ul li a{
+    background: #7d7c7c;
+    padding: 10px 15px;;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: none;
+}
+.barra-lateral li ul li a:hover{
+    background: #7d7c7c;
+}
+.barra-lateral li ul li{
+    border-bottom: 1px solid #858383;
+}
+.barra-lateral li ul li:last-of-type{
+    border-bottom: 0;
+}
+.center-user{       
+    position: fixed; 
+    width: 100%;
+    z-index: 99;
+}
+.center-user .avatar{
+    width: 39px;
+    height: 39px;
+    border: 1px solid #e5e5e7;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.center-user .avatar img{
+    width: 100%;
+    max-width: 100%;
+}
+.center-user .detail-user{
+    background: #505153;
+    width: 188px; 
+    float: left;
+    /*padding: 10px 10px 25px 10px;*/
+    padding: 20px 10px;
+}
+.center-user .detail-user span{
+    font-size: 13px;
+    color: white;
+}
+.center-user .detail-user span em{
+    display: block;
+}
+.center-user .barra-user{
+    width: 100%;
+    width: -webkit-calc(100% - 248px);
+    width: -moz-calc(100% - 248px);
+    width: calc(100% - 248px);
+    float: right;
+    background: white;
+    height: 43px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 20px;
+}
+.center-user .barra-user i{
+    font-size: 16px;
+    color: #999999;
+}
+.center-user .barra-user a{
+    text-decoration: none;
+    color: #999;
+    display: inline-block;
+    margin-right: 15px;
+}
+.form-busca-oculta{
+    display: none;
+}
+.barra-user .busca{
+    position: relative;
+    top: 10px;
+    width: 400px;
+    float: left;
+}
+.barra-user input[type="submit"]{
+    color: white;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: #999999;
+    border: 0;
+}
+.form-busca-visivel{
+    display: inline;
+}
+.barra-user .logout{
+    float: right;
+    position: relative;
+    top: 5px;
+    width: 400px;
+    text-align: right;
+}
+.barra-user .logout a{
+    display: inline-block;
+    padding: 8px 16px;
+    color: #fff;
+    background: #67686b;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-right: 0;
+    margin-left: 10px;
+}
+.barra-user .logout a.visu-site{
+    background: #999999;
+}
+.barra-user .logout a.sair{
+    background: #707070;
+}
+.main-admin{
+    min-width: 790px;
+    width: -webkit-calc(100% - 208px);
+    width: -moz-calc(100% - 208px);
+    width: calc(100% - 208px);
+    height: auto;
+    float: left;
+    margin-left: 208px;
+    position: relative;
+    top: 85px;
+    overflow: hidden;
+}
+.main-admin .box{
+    /*width: 373px; LARGURA SE A TAG PAI ESTIVER TRAVADA EM 1000px */
+    width: 45%;
+    border: 1px solid #e1e1e1;
+    display: inline-table;
+    margin: 1%;
+    background: #dfdfdf;
+}
+.box .tit-box{
+    font-size: 11px;
+    color: white;
+    height: 30px;
+    width: 96%;
+    line-height: 30px;
+    position: relative;
+    background: #545454;
+    padding: 0 2%;
+}
+.box .tit-box .plus{
+    width: 30px;
+    height: 30px;
+    border-left: 1px solid #fff;
+    background: #1e1e1e;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+.box .tit-box .plus a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+}
+.box table{
+    width: 100%; 
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #7d7c7c;
+}
+.box table tr{
+    border-bottom: 1px solid #e1e1e1;
+}
+.box table tr:last-of-type{
+    border-bottom: 0px;
+}
+.box table tr td:first-child{
+    background: #f6f6f6;
+    width: 10%;
+    height: 30px;
+    line-height: 30px; 
+    text-align: center;
+    font-weight: bold;
+    border-right: 1px solid #e1e1e1;
+}
+.box table tr td:last-child{
+    background: #fff;
+    width: 88%;
+    height: auto; 
+    padding: 0 1%;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.box table tr td a{
+    text-decoration: none;
+    color: #7d7c7c;
+}
+.box table tr td a:hover{
+    text-decoration: underline;
+}
+.guia-site{
+    width: 100%;
+    padding: 15px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #e7e8e8;
+    top: 100px;
+}
+.guia-site a{
+    text-decoration: none;
+    color: #7d7c7c;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-right: 1px solid #7d7c7c;
+    padding-right: 10px;
+    margin-right: 6px;
+    padding-left: 0!important;
+}
+.guia-site a:hover{
+    text-decoration: underline;
+}
+.guia-site a:last-of-type{
+    border-right: 0;
+}
+.main-admin .tenor{
+    width: 760px;
+    height: auto;
+    overflow: hidden;
+    padding: 15px;
+}
+.main-admin .tenor h1{
+    font-size: 24px;
+    color: #545454;
+    margin-bottom: 10px;
+    display: inline;
+    margin-right: 20px;
+}
+.main-admin .tenor h2{
+    font-size: 14px;
+    padding: 5px;
+    font-weight: normal;
+    color: #fff;
+    background: #545454;
+    margin-bottom: 10px;
+    display: block; 
+    width: 735px;
+}
+.tableform{
+    width: 760px;
+    height: auto;
+    /*border: 1px solid red;*/
+    margin-top: 20px;
+}
+.tableform tr{
+    margin-bottom: 10px;
+    display: block;
+}
+.tableform td:first-child{
+    font-size: 14px; 
+    width: 150px;
+}
+.tableform td:last-child{
+    font-size: 14px; 
+    width: 590px;
+}
+input[type="submit"],input[type="button"]{
+    color: white;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: #999999;
+    border: 0;
+}
+.tableform input[type="text"]{
+    height: 25px;
+    width: 100%;
+}
+.tableform textarea{
+    height: 60px;
+    /*max-height: 120px;*/
+    width: 100%;
+    /*max-width: 100%;*/
+    resize: none;
+}
+.tableform input[type='radio']{
+    margin-left: 20px;
+}
+.tableform input[type='radio']:first-child{
+    margin-left: 0px;
+}
+h2{
+    font-size: 16px;
+}
+hr{
+    border: 1px solid #999;
+    margin: 10px 0;
+}
+.tableAll{
+    font-size: 14px; 
+    width: 760px;
+}
+.tableAll thead{
+    background: #7d7c7c;
+    /*color: white;*/
+    /*padding: 3px;*/
+    text-transform: capitalize;
+}
+.tableAll thead td{
+    padding: 3px;
+    color: white;
+}
+.tableAll tbody{
+    background: white;
+}
+.tableAll tbody td{
+    padding: 3px;
+    /*color: #1e1e1e!important;*/
+}
+.tableAll tbody td a{
+    text-decoration: none;
+    color: #1e1e1e!important;
+}
+.tableAll tbody td a:hover{
+    text-decoration: underline;
+}
+.proPage{
+    background: #888;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 6px;
+    display: inline-block;
+    margin: 20px 20px 20px 0px;
+    /*    margin-left: 2px;*/
+    border-radius: 3px;
+    /*
+    color: white;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: #999999;
+    border: 0;*/
+}
+.divError{
+    background: #f1dfdf;
+    border: 1px solid #e6d7da;
+    color: #8a5a66;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 10px 0;
+}
+.dib{
+    display: inline;
+}
+
+.erro{
+    background: #912626;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+.editar-user{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.editar-user:hover{
+    color: #858383;
+}
+
+
+.tableAll tr.habilitado{
+    background: #d1f6d4!important;  
+}
+.tableAll tr.desabilitado{
+    background: #e1e1e1!important;  
+}
+
+div.habilitado{
+    border: 5px solid #d1f6d4!important;
+}
+
+div.desabilitado{
+    border: 5px solid #e1e1e1!important;
+}
+
+.marcLang{
+    background: #d1f6d4!important;
+    border: 2px solid #67686b;
+    border: 2px solid #B0DCCC;
+    color: #67686b!important;
+    font-weight: bold!important
+}
+
+/* DESTAQUES */
+
+.lista_destaque{
+    width: 600px;
+    height: auto;
+    background: none;
+    border: 1px solid #a2a5a6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: white;
+    padding: 5px;
+    overflow: hidden;
+}
+.lista_destaque a{
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+}
+.lista_destaque a:hover{
+    text-decoration: underline;
+}
+ul{
+    list-style: none;
+}
+.lista_banner{
+    width: 600px;
+    height: auto;
+    background: none;
+    border: 1px solid #a2a5a6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: white;
+    padding: 5px;
+    overflow: hidden;
+}
+.lista_banner a{
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+}
+.lista_banner a:hover{
+    text-decoration: underline;
+}
+
+/* RODAPÉ */
+.lista_rodape{
+    width: 600px;
+    height: auto;
+    background: none;
+    border: 1px solid #a2a5a6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: white;
+    padding: 5px;
+}
+.lista_rodape span.titMenu{
+    font-size: 16px;
+    color: black;
+    display: block;
+}
+.lista_rodape a{
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+}
+.lista_rodape a:hover{
+    text-decoration: underline;
+}
+a.linkIcon{
+    color: #333;
+    text-decoration: none;
+}
+
+.allRodape{
+    box-sizing: border-box;
+    overflow: hidden;
+    /*padding: 0 20px;*/
+}
+.allRodape .i-allRodape{
+    text-align: center;
+    height: 140px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    /*float: left;*/
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    color: #999;
+}
+.allRodape .i-allRodape img{
+    max-height: 100px;
+    display: block;
+    margin-bottom: 5px;
+}
+.allRodape .i-allRodape a.alterar{
+    color: #999;
+    text-decoration: none;
+}
+.allRodape .i-allRodape a.alterar:hover{
+    color: #333;
+}
+.allRodape .i-allRodape a.delete{
+    color: #e28888;
+    text-decoration: none;
+}
+.allRodape .i-allRodape a.delete:hover{
+    color: #de5b5b;
+}
+.allRodape .i-allRodape a:hover{
+    /*    color: #fff;
+        text-decoration: none;*/
+}
+
+a.selecionado{
+    background: #999;
+    padding: 2px;
+    text-decoration: none;
+    color: white;
+}
+a.selecionado:hover{
+    background: #333;
+}

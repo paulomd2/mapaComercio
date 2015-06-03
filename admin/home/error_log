@@ -1,0 +1,9 @@
+[04-May-2015 16:29:16 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/expopostos/public_html/admin/home/index.php:13) in /home/expopostos/public_html/admin/include/header.php on line 5
+[04-May-2015 13:29:16 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/expopostos/public_html/admin/usuarios/model/dao.php on line 53
+[04-May-2015 13:29:16 America/Sao_Paulo] PHP Warning:  Unknown: open(/tmp/sess_bd1e01780f43d42986d07725250b8c95, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[04-May-2015 13:29:16 America/Sao_Paulo] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[05-May-2015 18:53:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/expopostos/public_html/admin/home/index.php:11) in /home/expopostos/public_html/admin/include/header.php on line 3
+[05-May-2015 18:53:47 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/expopostos/public_html/admin/home/index.php:11) in /home/expopostos/public_html/admin/model/constantes.php on line 9
+[05-May-2015 18:54:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/expopostos/public_html/admin/home/index.php:11) in /home/expopostos/public_html/admin/include/header.php on line 3
+[05-May-2015 18:54:53 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/expopostos/public_html/admin/home/index.php:11) in /home/expopostos/public_html/admin/include/header.php on line 3
+[07-May-2015 18:12:37 America/Sao_Paulo] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/expopostos/public_html/admin/banners/model/dao.php on line 99
