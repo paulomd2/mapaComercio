@@ -1,9 +1,13 @@
 <?php
 
 require_once '../model/banco.php';
-require_once 'model/dao.php';
+require_once '../model/noticiasDao.php';
 
-$count = $_GET['count'];
+if(isset($_GET['count'])){
+    $count = $_GET['count'];
+}else{
+    $count = 5;
+}
 
 
 if (isset($_GET['pagina'])) {
@@ -13,6 +17,8 @@ if (isset($_GET['pagina'])) {
 }
 $min = (($pagina - 1) * $count);
 $paginacao = $min . ',' . $count;
+
+echo $paginacao;
 
 $noticias = $objNoticiaDao->verNoticias($paginacao);
 $quantidade = $objNoticiaDao->numNoticias();
@@ -39,7 +45,7 @@ for ($i = 0; $i < count($noticias); $i++) {
 
     echo '<tr ' . $classe . '>
             <td>' . utf8_encode($noticias[$i]["titulo"]) . '</td>
-            <td>' . $noticias[$i]["dataPublicacao2"] . '</td>
+            <td>' . implode('/', array_reverse(explode('-', $noticias[$i]["dataPublicacao"]))) . '</td>
             <td><a href="altNoticia.php?id=' . $noticias[$i]['idNoticia'] . '">Alterar</a></td>
             <td><a href="javascript:delNoticia(' . $noticias[$i]["idNoticia"] . ')">Excluir</a></td>
           </tr>';

@@ -4,18 +4,18 @@ require_once 'noticia.php';
 
 class NoticiasDAO extends Banco {
 
-    public function cadNoticia($objNoticia) {
+    public function cadNoticia(Noticia $objNoticia) {
         $conexao = $this->abreConexao();
 
         $sql = "INSERT INTO " . TBL_NOTICIA . " SET
-               idRegiao = '" . $objNoticia->getTexto() . "',
+               idRegiao = '" . $objNoticia->getIdRegiao() . "',
                titulo = '" . $objNoticia->getTitulo() . "',
                subtitulo = '" . $objNoticia->getSubTitulo() . "',
                texto = '" . $objNoticia->getTexto() . "',
-               foto = '" . $objNoticia->getTexto() . "',
-               creditoFoto = '" . $objNoticia->getTexto() . "',
-               tipoNoticia = '" . $objNoticia->getTexto() . "',
-               caderno = '" . $objNoticia->getTexto() . "',
+               foto = '" . $objNoticia->getFoto() . "',
+               creditoFoto = '" . $objNoticia->getCreditoFoto() . "',
+               tipoNoticia = '" . $objNoticia->getTipo() . "',
+               caderno = '" . $objNoticia->getCaderno() . "',
                dataPublicacao = '" . $objNoticia->getDataPublicacao() . "',
                dataCadastro = '" . $objNoticia->getDataCadastro() . "',
                status = " . $objNoticia->getStatus() . "
@@ -39,7 +39,6 @@ class NoticiasDAO extends Banco {
                tipoNoticia = '" . $objNoticia->getTexto() . "',
                caderno = '" . $objNoticia->getTexto() . "',
                dataPublicacao = '" . $objNoticia->getDataPublicacao() . "',
-               dataCadastro = '" . $objNoticia->getDataCadastro() . "',
                status = " . $objNoticia->getStatus() . "
                    WHERE idNoticia = " . $objNoticia->getIdNoticia() . "
                ";
@@ -67,7 +66,7 @@ class NoticiasDAO extends Banco {
         $sql = "SELECT *
                 FROM " . TBL_NOTICIA . "
                     WHERE status != 0
-                        ORDER BY dataExibicao DESC
+                        ORDER BY dataPublicacao DESC
                         LIMIT " . $count . "
                 ";
 

@@ -3,6 +3,7 @@
 class Noticia {
 
     private $idNoticia;
+    private $idRegiao;
     private $titulo;
     private $subtitulo;
     private $texto;
@@ -10,9 +11,8 @@ class Noticia {
     private $dataCadastro;
     private $status;
     private $foto;
-    private $idRegiao;
     private $caderno;
-    private $tipoNoticia;
+    private $tipo;
     private $creditoFoto;
     
     public function getIdNoticia() {
@@ -22,6 +22,12 @@ class Noticia {
         $this->idNoticia = $idNoticia;
     }
 
+    public function getIdRegiao() {
+        return $this->idRegiao;
+    }
+    public function setIdRegiao($idRegiao) {
+        $this->idRegiao = $idRegiao;
+    }
     
     public function getTitulo() {
         return $this->titulo;
@@ -77,15 +83,6 @@ class Noticia {
     public function setFoto($foto) {
         $this->foto = $foto;
     }
-    
-
-    public function getIdRegiao() {
-        return $this->idRegiao;
-    }
-    public function setIdRegiao($idRegiao) {
-        $this->idRegiao = $idRegiao;
-    }
-    
 
     public function getCaderno() {
         return $this->caderno;
@@ -95,11 +92,11 @@ class Noticia {
     }
     
 
-    public function getTipoNoticia() {
-        return $this->tipoNoticia;
+    public function getTipo() {
+        return $this->tipo;
     }
-    public function setTipoNoticia($tipoNoticia) {
-        $this->tipoNoticia = $tipoNoticia;
+    public function setTipo($tipo) {
+        $this->tipo = $tipo;
     }
     
 

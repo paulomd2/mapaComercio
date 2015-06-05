@@ -24,12 +24,10 @@ setcookie("ck_authorized", "true", 0, "/");
             </div>
             <div class="tenor">
                 <h1>Alterar notícia</h1>
-
-                
-                <div>
-                    <div id="formNoticiaLoad"></div>
-
-                </div>
+                <a href="verNoticias.php" class="proPage">Todas as notícias</a>
+                <?php
+                include_once 'formNoticia.php';
+                ?>
             </div>
     </body>
 </html>
