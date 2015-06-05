@@ -1,9 +1,14 @@
 <?php
+
 require_once '../model/regiaoDao.php';
 
-$count = $_GET['count'];
+if (isset($_GET['count'])) {
+    $count = $_GET['count'];
+} else {
+    $count = 5;
+}
 
-$regioes = $objRegiaoDao->verRegioes();
+$regioes = $objRegiaoDao->listaRegiao();
 
 foreach ($regioes as $regiao) {
     if ($regiao['status'] == 1) {
@@ -14,15 +19,8 @@ foreach ($regioes as $regiao) {
 
     echo '<tr ' . $classe . '>
             <td>' . utf8_encode($regiao["nome"]) . '</td>
-            <td>' . $regiao["dataPublicacao2"] . '</td>
-            <td><a href="altNoticia.php?id=' . $regiao['idRegiao'] . '">Alterar</a></td>
-            <td><a href="javascript:delNoticia(' . $regiao["idRegiao"] . ')">Excluir</a></td>
+            <td><a href="altRegiao.php?id=' . $regiao['idRegiao'] . '">Alterar</a></td>
+            <td><a href="javascript:delRegiao(' . $regiao["idRegiao"] . ')">Excluir</a></td>
           </tr>';
-}
-
-if ($count < $quantidade) {
-    echo '<tr>
-            <td colspan="4" style="text-align:center">' . $paginas . '</td>
-        </tr>';
 }
 ?>

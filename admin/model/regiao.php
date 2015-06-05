@@ -3,16 +3,15 @@ class Regiao{
     private $idRegiao;
     private $nome;
     private $texto;
-    private $cor;
     private $imagem;
     private $status;
-    private $informações;
+    private $informacoes;
     
     public function getIdRegiao() {
         return $this->idRegiao;
     }
     public function setIdRegiao($idRegiao) {
-        $this->idRegiao = $idRegiao;
+        $this->idRegiao = seg($idRegiao);
     }
     
 
@@ -20,7 +19,7 @@ class Regiao{
         return $this->nome;
     }
     public function setNome($nome) {
-        $this->nome = $nome;
+        $this->nome = seg($nome);
     }
     
 
@@ -28,15 +27,7 @@ class Regiao{
         return $this->texto;
     }
     public function setTexto($texto) {
-        $this->texto = $texto;
-    }
-    
-
-    public function getCor() {
-        return $this->cor;
-    }
-    public function setCor($cor) {
-        $this->cor = $cor;
+        $this->texto = seg($texto);
     }
     
 
@@ -44,7 +35,7 @@ class Regiao{
         return $this->imagem;
     }
     public function setImagem($imagem) {
-        $this->imagem = $imagem;
+        $this->imagem = seg($imagem);
     }
     
 
@@ -52,15 +43,15 @@ class Regiao{
         return $this->status;
     }
     public function setStatus($status) {
-        $this->status = $status;
+        $this->status = seg($status);
     }
     
 
-    public function getInformações() {
-        return $this->informações;
+    public function getInformacoes() {
+        return $this->informacoes;
     }
-    public function setInformações($informações) {
-        $this->informações = $informações;
+    public function setInformacoes($informações) {
+        $this->informacoes = seg($informações);
     }
 }
 

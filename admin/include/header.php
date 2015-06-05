@@ -29,7 +29,7 @@ if (empty($_SESSION)) {
         </span>
     </div>
     <div class="barra-user">
-        <div class="busca">
+        <!--div class="busca">
             <a href="#" onclick="javascript:mostraForm('formbusca');"><i class="icon icon-search"></i></a>
             <form class="form-busca-oculta" id="formbusca">
                 <input type="text" id="busca" name="busca" />
@@ -45,9 +45,9 @@ if (empty($_SESSION)) {
                 <input type="button" value="BUSCAR" id="btnBusca"/><br />
                 <span id="erroBusca" class="erro"></span>
             </form>
-        </div>
+        </div-->
         <div class="logout">
-            <a <?php if ($_SESSION['idioma'] == 'pt') {
+<!--            <a <?php if ($_SESSION['idioma'] == 'pt') {
                 echo 'href="#" class="marcLang"';
             } else {
                 echo 'href="javascript:idioma(\'pt\')"';
@@ -62,7 +62,7 @@ if (empty($_SESSION)) {
             } else {
                 echo 'href="javascript:idioma(\'es\')"';
             } ?>>ES</a>
-            <a href="#" class="visu-site">Visualizar site</a>
+            <a href="#" class="visu-site">Visualizar site</a>-->
             <a href="#" onclick="deslogar()" class="sair">Sair</a>
         </div>
     </div>
