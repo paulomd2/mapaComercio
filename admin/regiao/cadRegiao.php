@@ -8,8 +8,7 @@ setcookie("ck_authorized", "true", 0, "/");
         <meta charset="UTF-8">
         <title>Painel | Fagga</title>
         <?php include_once '../include/head.php'; ?>
-        <script type="text/javascript" src="../js/jquery.maskedinput.js"></script>
-        <script type="text/javascript" src="js/noticias.js"></script>
+        <script type="text/javascript" src="../js/regiao.js"></script>
         <script src="../plugin/ckeditor/ckeditor.js"></script>
         <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
         <!-- polyfiller file to detect and load polyfills -->
