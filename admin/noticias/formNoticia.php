@@ -97,6 +97,7 @@ if (isset($_GET['id'])) {
             <td>
                 <input type="file" id="foto" name="foto" /><br />
                 <span id="spanFoto" class="erro"></span>
+                <input type="hidden" id="fotoAntiga" name="fotoAntiga" value="<?php echo $noticia['foto']; ?>" />
             </td>
         </tr>
         <tr>
@@ -125,7 +126,7 @@ if (isset($_GET['id'])) {
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="button" id="btnCadastrar" value="Cadastrar" /></td>
+            <td colspan="2"><input type="button" id="<?php echo (isset($noticia)) ?  'btnAlterar' : 'btnCadastrar'; ?>" value="<?php echo (isset($noticia)) ?  'Alterar' : 'Cadastrar'; ?>" /></td>
         </tr>
     </table>
 </form>                

@@ -32,49 +32,56 @@ switch ($opcao) {
             $objNoticia->setDataCadastro($dataCadastro);
 
             $objNoticiaDao->cadNoticia($objNoticia);
+
+            header('Location: ../noticias');
             break;
         }
 
     case "altNoticia": {
             $titulo = $_POST['titulo'];
-            $subtitulo = $_POST['sutitulo'];
+            $subtitulo = $_POST['subtitulo'];
             $caderno = $_POST['caderno'];
             $tipo = $_POST['tipo'];
             $regiao = $_POST['regiao'];
             $texto = $_POST['texto'];
-            $foto = uploadImagem();
+            $foto = '';
             $creditoFoto = $_POST['credito'];
             $dataPublicacao = $_POST['publicacao'];
             $status = $_POST["status"];
-            $dataCadastro = date('Y-m-d H:i:s');
             $idNoticia = $_POST['idNoticia'];
+
+            if ($_FILES['foto']['name'] == '') {
+                $foto = $_POST['fotoAntiga'];
+            } else {
+                echo 'não entrou';
+                $foto = uploadImagem();
+            }
 
             $objNoticia->setTitulo($titulo);
             $objNoticia->setSubtitulo($subtitulo);
             $objNoticia->setTexto($texto);
-            $objNoticia->setCaderno($fonte);
-            $objNoticia->setTipo($mercado);
-            $objNoticia->setRegiao($mercado);
-            $objNoticia->setFoto($mercado);
-            $objNoticia->setCreditoFoto($mercado);
+            $objNoticia->setCaderno($caderno);
+            $objNoticia->setTipo($tipo);
+            $objNoticia->setIdRegiao($regiao);
+            $objNoticia->setFoto($foto);
+            $objNoticia->setCreditoFoto($creditoFoto);
             $objNoticia->setStatus($status);
-            $objNoticia->setDataPublicacao($DataPublicacao);
-            $objNoticia->setDataCadastro($dataCadastro);
+            $objNoticia->setDataPublicacao($dataPublicacao);
             $objNoticia->setIdNoticia($idNoticia);
 
             $objNoticiaDao->altNoticia($objNoticia);
+
+            header('Location: ../noticias');
             break;
         }
 
-    case "excluir": {
-            $idNoticia = $_POST['idNoticia'];
+    case "excluir":
+        $idNoticia = $_POST['idNoticia'];
 
-            $objNoticia->setIdNoticia($idNoticia);
+        $objNoticia->setIdNoticia($idNoticia);
 
-            $objNoticiaDao->delNoticia($objNoticia);
-            $objLogDao->cadLog($_SESSION['id'], 'EXCLUIU', 'NOTICIAS', $objNoticia->getIdNoticia(), date('Y-m-d H:i:s'));
-            break;
-        }
+        $objNoticiaDao->delNoticia($objNoticia);
+        break;
 }
 
 function uploadImagem() {
