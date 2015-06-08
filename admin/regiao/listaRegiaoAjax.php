@@ -18,7 +18,7 @@ foreach ($regioes as $regiao) {
     }
 
     echo '<tr ' . $classe . '>
-            <td>' . utf8_encode($regiao["nome"]) . '</td>
+            <td>' . ($regiao["nome"]) . '</td>
             <td><a href="altRegiao.php?id=' . $regiao['idRegiao'] . '">Alterar</a></td>
             <td><a href="javascript:delRegiao(' . $regiao["idRegiao"] . ')">Excluir</a></td>
           </tr>';

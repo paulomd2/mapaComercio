@@ -59,7 +59,6 @@ $(document).ready(function(){
             $("#status").focus();
             $("#spanStatus").html('Você deve selecionar um Status!').css('display', 'inline-block');
         }else{
-            alert('zsdasdasda');
             $("#frmAltRegiao").submit();
         }
     });
