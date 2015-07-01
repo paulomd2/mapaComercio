@@ -1,6 +1,6 @@
 <?php
-
-require_once 'noticia.php';
+require_once 'banco.php';
+require_once 'bean/noticia.php';
 
 class NoticiasDAO extends Banco {
 

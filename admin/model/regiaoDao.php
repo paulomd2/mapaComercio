@@ -1,7 +1,7 @@
 <?php
 
 require_once 'banco.php';
-require_once 'regiao.php';
+require_once 'bean/regiao.php';
 
 class RegiaoDAO extends Banco {
 

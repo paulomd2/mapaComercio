@@ -19,21 +19,21 @@ class Noticia {
         return $this->idNoticia;
     }
     public function setIdNoticia($idNoticia) {
-        $this->idNoticia = $idNoticia;
+        $this->idNoticia = seg($idNoticia);
     }
 
     public function getIdRegiao() {
         return $this->idRegiao;
     }
     public function setIdRegiao($idRegiao) {
-        $this->idRegiao = $idRegiao;
+        $this->idRegiao = seg($idRegiao);
     }
     
     public function getTitulo() {
         return $this->titulo;
     }
     public function setTitulo($titulo) {
-        $this->titulo = $titulo;
+        $this->titulo = seg($titulo);
     }
     
 
@@ -41,7 +41,7 @@ class Noticia {
         return $this->subtitulo;
     }
     public function setSubtitulo($subtitulo) {
-        $this->subtitulo = $subtitulo;
+        $this->subtitulo = seg($subtitulo);
     }
     
 
@@ -49,7 +49,7 @@ class Noticia {
         return $this->texto;
     }
     public function setTexto($texto) {
-        $this->texto = $texto;
+        $this->texto = seg($texto);
     }
     
 
@@ -57,7 +57,7 @@ class Noticia {
         return $this->dataPublicacao;
     }
     public function setDataPublicacao($dataPublicacao) {
-        $this->dataPublicacao = $dataPublicacao;
+        $this->dataPublicacao = seg($dataPublicacao);
     }
     
 
@@ -65,7 +65,7 @@ class Noticia {
         return $this->dataCadastro;
     }
     public function setDataCadastro($dataCadastro) {
-        $this->dataCadastro = $dataCadastro;
+        $this->dataCadastro = seg($dataCadastro);
     }
     
 
@@ -73,7 +73,7 @@ class Noticia {
         return $this->status;
     }
     public function setStatus($status) {
-        $this->status = $status;
+        $this->status = seg($status);
     }
     
 
@@ -81,14 +81,14 @@ class Noticia {
         return $this->foto;
     }
     public function setFoto($foto) {
-        $this->foto = $foto;
+        $this->foto = seg($foto);
     }
 
     public function getCaderno() {
         return $this->caderno;
     }
     public function setCaderno($caderno) {
-        $this->caderno = $caderno;
+        $this->caderno = seg($caderno);
     }
     
 
@@ -96,7 +96,7 @@ class Noticia {
         return $this->tipo;
     }
     public function setTipo($tipo) {
-        $this->tipo = $tipo;
+        $this->tipo = seg($tipo);
     }
     
 
@@ -104,7 +104,7 @@ class Noticia {
         return $this->creditoFoto;
     }
     public function setCreditoFoto($creditoFoto) {
-        $this->creditoFoto = $creditoFoto;
+        $this->creditoFoto = seg($creditoFoto);
     }
 }
 
